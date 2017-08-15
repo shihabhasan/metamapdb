@@ -43,7 +43,7 @@ def mapping_stats():
         # print refID, domain, phylum, taxoclass, order, family, genus, species
 
         queryDic[idx] = tuple(queryTaxo[1::2])
-        p = QueryTable(queryid=refID, domain=queryDic[idx][0], phylum=queryDic[idx][1],
+        p = QueryTable(queryid=idx, domain=queryDic[idx][0], phylum=queryDic[idx][1],
                            taxoclass=queryDic[idx][2], order=queryDic[idx][3],
                            family=queryDic[idx][4], genus=queryDic[idx][5], species=queryDic[idx][6])
         p.save()
