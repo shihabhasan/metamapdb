@@ -7,32 +7,32 @@ from django.db import models
 
 class QueryTable(models.Model):
     queryid = models.TextField(primary_key=True)
-    mappcount = models.IntegerField()
-    unmappcount = models.IntegerField()
+    mappcount = models.IntegerField(null=True)
+    unmappcount = models.IntegerField(null=True)
 
-    domain = models.TextField()
-    phylum = models.TextField()
-    taxoclass = models.TextField()
-    order = models.TextField()
-    family = models.TextField()
-    genus = models.TextField()
-    species = models.TextField()
+    domain = models.TextField(null=True)
+    phylum = models.TextField(null=True)
+    taxoclass = models.TextField(null=True)
+    order = models.TextField(null=True)
+    family = models.TextField(null=True)
+    genus = models.TextField(null=True)
+    species = models.TextField(null=True)
 
-    domainCount = models.IntegerField()
-    phylumCount = models.IntegerField()
-    taxoclassCount = models.IntegerField()
-    orderCount = models.IntegerField()
-    familyCount = models.IntegerField()
-    genusCount = models.IntegerField()
-    speciesCount = models.IntegerField()
+    domainCount = models.IntegerField(null=True)
+    phylumCount = models.IntegerField(null=True)
+    taxoclassCount = models.IntegerField(null=True)
+    orderCount = models.IntegerField(null=True)
+    familyCount = models.IntegerField(null=True)
+    genusCount = models.IntegerField(null=True)
+    speciesCount = models.IntegerField(null=True)
 
-    domainSensitivity = models.FloatField()
-    phylumSensitivity = models.FloatField()
-    taxoclassSensitivity = models.FloatField()
-    orderSensitivity = models.FloatField()
-    familySensitivity = models.FloatField()
-    genusSensitivity = models.FloatField()
-    speciesSensitivity = models.FloatField()
+    domainSensitivity = models.FloatField(null=True)
+    phylumSensitivity = models.FloatField(null=True)
+    taxoclassSensitivity = models.FloatField(null=True)
+    orderSensitivity = models.FloatField(null=True)
+    familySensitivity = models.FloatField(null=True)
+    genusSensitivity = models.FloatField(null=True)
+    speciesSensitivity = models.FloatField(null=True)
 
     def __str__(self):
         return self.queryid
@@ -40,13 +40,13 @@ class QueryTable(models.Model):
 
 class ReferenceTable(models.Model):
     refernceid = models.TextField(primary_key=True)
-    domain = models.TextField()
-    phylum = models.TextField()
-    taxoclass = models.TextField()
-    order = models.TextField()
-    family = models.TextField()
-    genus = models.TextField()
-    species = models.TextField()
+    domain = models.TextField(null=True)
+    phylum = models.TextField(null=True)
+    taxoclass = models.TextField(null=True)
+    order = models.TextField(null=True)
+    family = models.TextField(null=True)
+    genus = models.TextField(null=True)
+    species = models.TextField(null=True)
 
     def __str__(self):
         return self.refernceid
