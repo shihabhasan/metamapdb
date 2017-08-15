@@ -2,23 +2,23 @@ from app.models import QueryTable, ReferenceTable
 
 def mapping_stats():
 
-    refDic=dict()
-    refFile=open("reference.tsv", "r")
-
-    for line in refFile:
-        line=line.strip()
-        l=line.split("\t")
-        refID=l[0]
-        refTaxo=l[1].replace(";", "__").split("__")
-        # domain, phylum, taxoclass, order, family, genus, species = tuple(refTaxo[1::2])
-        # print refID, domain, phylum, taxoclass, order, family, genus, species
-
-        refDic[refID]= tuple(refTaxo[1::2])
-
-        p = ReferenceTable(refernceid=refID, domain=refDic[refID][0], phylum=refDic[refID][1],
-                           taxoclass=refDic[refID][2], order=refDic[refID][3],
-                           family=refDic[refID][4], genus=refDic[refID][5], species=refDic[refID][6])
-        p.save()
+    # refDic=dict()
+    # refFile=open("reference.tsv", "r")
+    #
+    # for line in refFile:
+    #     line=line.strip()
+    #     l=line.split("\t")
+    #     refID=l[0]
+    #     refTaxo=l[1].replace(";", "__").split("__")
+    #     # domain, phylum, taxoclass, order, family, genus, species = tuple(refTaxo[1::2])
+    #     # print refID, domain, phylum, taxoclass, order, family, genus, species
+    #
+    #     refDic[refID]= tuple(refTaxo[1::2])
+    #
+    #     p = ReferenceTable(refernceid=refID, domain=refDic[refID][0], phylum=refDic[refID][1],
+    #                        taxoclass=refDic[refID][2], order=refDic[refID][3],
+    #                        family=refDic[refID][4], genus=refDic[refID][5], species=refDic[refID][6])
+    #     p.save()
         # for k in refDic:
         #     print refDic[k][2]
 
