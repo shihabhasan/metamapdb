@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="col-md-12">
+    <div class="text-center">
+        <h2 class="section-heading">MetaMapDB</h2>
+        <p>MetaMapDB is the database to find the read mapping count to reference genomes and taxnomy</p>
+    </div>
+    <div align="center">
+        <div class="input-group col-md-4 col-xs-12">
+            <input type="text" class="search-query form-control" placeholder="Search here" />
+            <span class="input-group-btn">
+                <button class="btn btn-danger" type="button">
+                    <a href="/help"><i class="fa fa-search fa-lg"></i></a>
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <p>
+    {{ table_result }}
+    </p>
+</div>
+
+
+
+
+<div class="col-md-12">
+    <div align="center">
+        <div style="padding: 3em; background:rgba(255, 255, 255,0.7)";>
+        <p><h1><strong>Query result</strong></h1></p>
+            <table id="example" class="display" cellspacing="0" width="100%">
+                <thead>
+                <tr><th>Name</th><th>Position</th><th>Office</th><th>Salary</th></tr>
+                </thead>
+
+                <tbody>
+                <tr><td>Tiger Nixon</td><td>System Architect</td><td>Edinburgh</td><td>$320,800</td></tr>
+                <tr><td>Garrett Winters</td><td>Accountant</td><td>Tokyo</td><td>$170,750</td></tr>
+                <tr><td>Ashton Cox</td><td>Junior Technical Author</td><td>San Francisco</td><td>$86,000</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    var table = $('#example').DataTable({
+        "scrollX": true,
+        dom: 'Bfrtip',
+        scrollY: '50vh',
+        scrollCollapse: true,
+        paging: false,
+        colReorder: true,
+        stateSave: true,
+        buttons: [
+            'colvis',
+            {
+                extend: 'copyHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'csvHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'print',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+        ],
+        columnDefs: [ {
+            targets: -1,
+            visible: false
+        } ]
+    });
+});
+</script>
+
+{% endblock %}
+

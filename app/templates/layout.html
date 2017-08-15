@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Shihab Hasan">
+
+    <title>MetaMapDB</title>
+
+    {% load staticfiles %}
+    <link rel="shortcut icon" href="{% static 'image/icon.png' %}" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" href="{% static 'css/new-age.min.css' %}" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/buttons.dataTables.min.css' %}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fixedColumns.dataTables.min.css' %}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/colReorder.dataTables.min.css' %}" media="screen">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+
+</head>
+
+<body background={% static 'image/bg.png' %}>
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand page-scroll" href="/home"><img alt="" src="{% static 'image/logo.png' %}" style="width:120px;"></a>
+            </div>
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+
+	
+    <section id="main_text">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+					{% block body %}
+					{% endblock %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+	
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2017 MetaMapDB. All Rights Reserved.
+            MetaMapDB is developed by <a href="http://ecogenomic.org/">Australian Centre for Ecogenomics</a> at <a href="http://uq.edu.au">The University of Queensland</a>.
+            </p>
+        </div>
+    </footer>
+
+    <!-- js -->
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/new-age.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/datatables.min.js' %}"></script>
+    <!-- datatables buttons -->
+    <script src="{% static 'js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.fixedColumns.min.js' %}"></script>
+    <script src="{% static 'js/jszip.min.js' %}"></script>
+    <script src="{% static 'js/pdfmake.min.js' %}"></script>
+    <script src="{% static 'js/vfs_fonts.js' %}"></script>
+    <script src="{% static 'js/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'js/buttons.print.min.js' %}"></script>
+    <script src="{% static 'js/buttons.colVis.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.colReorder.min.js' %}"></script>
+
+</body>
+
+</html>
